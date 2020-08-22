@@ -17,7 +17,6 @@
 #define ROW_LE BIT2     // P2.2
 #define ROW_COPI BIT3   // P2.3
 
-
 void col_OE_Disable();
 void col_OE_Enable();
 void col_CLK_Pulse();
