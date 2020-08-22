@@ -38,8 +38,13 @@ int main(void)
     volatile unsigned long j, k = 0;
     WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
 
+    // SET ACLK TO 16MHz
     BCSCTL1= CALBC1_16MHZ;
     DCOCTL= CALDCO_16MHZ;
+
+    CCTL0 = CCIE;
+    TACTL = TASSEL_2 + MC_1 + ID_3;
+    CCR0 = 10000;
 
     P1DIR |= (redLED | greenLED | COL_OE | COL_LE | COL_COPI);
     P1OUT &= ~ (redLED | greenLED | COL_LE | COL_COPI);
@@ -88,6 +93,13 @@ int main(void)
         } // row
         k++;
     } // superloop
+}
+
+#pragma vector=TIMERA0_VECTOR
+__interrupt void Timer_A (void)
+{
+    P1OUT ^= redLED;
+    P1IFG &= ~TA0IFG;
 }
 
 void enableDisplay()
