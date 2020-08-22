@@ -33,8 +33,8 @@ void goToRow(unsigned int);
 
 int main(void)
 {
-    int brightnessStep = 65;
-    unsigned int col, row, frame, brightness;
+    static const int brightnessStep = 65;
+    unsigned int col, row, brightness;
     volatile unsigned long j, k = 0;
     WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
 
@@ -43,7 +43,7 @@ int main(void)
     DCOCTL= CALDCO_16MHZ;
 
     CCTL0 = CCIE;
-    TACTL = TASSEL_2 + MC_1 + ID_3;
+    TACTL = TASSEL_2 | MC_1 | ID_3 | TAIE;
     CCR0 = 10000;
 
     P1DIR |= (redLED | greenLED | COL_OE | COL_LE | COL_COPI);
@@ -99,7 +99,7 @@ int main(void)
 __interrupt void Timer_A (void)
 {
     P1OUT ^= redLED;
-    P1IFG &= ~TA0IFG;
+    TACTL &= ~TA0IFG;
 }
 
 void enableDisplay()
