@@ -99,6 +99,7 @@ int main(void)
 __interrupt void Timer_A (void)
 {
     P1OUT ^= redLED;
+    TACTL &= ~TAIFG;
 }
 
 void enableDisplay()
