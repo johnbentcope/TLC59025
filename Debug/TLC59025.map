@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v20.2.2                     
 ******************************************************************************
->> Linked Fri Aug 21 20:33:44 2020
+>> Linked Sat Aug 22 19:20:05 2020
 
 OUTPUT FILE NAME:   <TLC59025.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c41c
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c42a
 
 
 MEMORY CONFIGURATION
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   INFOC                 00001040   00000040  00000000  00000040  RWIX
   INFOB                 00001080   00000040  00000000  00000040  RWIX
   INFOA                 000010c0   00000040  00000000  00000040  RWIX
-  FLASH                 0000c000   00003fde  0000048c  00003b52  RWIX
+  FLASH                 0000c000   00003fde  0000049a  00003b44  RWIX
   BSLSIGNATURE          0000ffde   00000002  00000002  00000000  RWIX  ffff 
   INT00                 0000ffe0   00000002  00000002  00000000  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
@@ -48,21 +48,21 @@ section   page    origin      length       input sections
                   000003b0    00000002     rts430_eabi.lib : boot.c.obj (.stack)
                   000003b2    0000004e     --HOLE--
 
-.text      0    0000c280    0000020c     
-                  0000c280    00000170     main.obj (.text:main)
-                  0000c3f0    0000002c     main.obj (.text:goToRow)
-                  0000c41c    00000014     rts430_eabi.lib : boot.c.obj (.text:_c_int00_noinit_noargs)
-                  0000c430    0000000e     main.obj (.text:col_CLK_Pulse)
-                  0000c43e    0000000e     main.obj (.text:col_LE_Latch)
-                  0000c44c    0000000a     main.obj (.text:row_CLK_Pulse)
-                  0000c456    0000000a     main.obj (.text:row_LE_Latch)
-                  0000c460    00000008     rts430_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000c468    00000008     main.obj (.text:col_OE_Enable)
-                  0000c470    00000006     rts430_eabi.lib : exit.c.obj (.text:abort)
-                  0000c476    00000006     main.obj (.text:enableDisplay)
-                  0000c47c    00000006     main.obj (.text:row_OE_Disable)
-                  0000c482    00000006     main.obj (.text:row_OE_Enable)
-                  0000c488    00000004     rts430_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+.text      0    0000c280    0000021a     
+                  0000c280    0000017e     main.obj (.text:main)
+                  0000c3fe    0000002c     main.obj (.text:goToRow)
+                  0000c42a    00000014     rts430_eabi.lib : boot.c.obj (.text:_c_int00_noinit_noargs)
+                  0000c43e    0000000e     main.obj (.text:col_CLK_Pulse)
+                  0000c44c    0000000e     main.obj (.text:col_LE_Latch)
+                  0000c45a    0000000a     main.obj (.text:row_CLK_Pulse)
+                  0000c464    0000000a     main.obj (.text:row_LE_Latch)
+                  0000c46e    00000008     rts430_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000c476    00000008     main.obj (.text:col_OE_Enable)
+                  0000c47e    00000006     rts430_eabi.lib : exit.c.obj (.text:abort)
+                  0000c484    00000006     main.obj (.text:enableDisplay)
+                  0000c48a    00000006     main.obj (.text:row_OE_Disable)
+                  0000c490    00000006     main.obj (.text:row_OE_Enable)
+                  0000c496    00000004     rts430_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
 
 .cinit     0    0000c000    00000000     UNINITIALIZED
 
@@ -133,9 +133,9 @@ MODULE SUMMARY
        Module             code   ro data   rw data
        ------             ----   -------   -------
     .\
-       main.obj           486    640       0      
+       main.obj           500    640       0      
     +--+------------------+------+---------+---------+
-       Total:             486    640       0      
+       Total:             500    640       0      
                                                   
     C:\ti\ccs1010\ccs\tools\compiler\ti-cgt-msp430_20.2.2.LTS\lib\rts430_eabi.lib
        boot.c.obj         20     2         0      
@@ -160,7 +160,7 @@ MODULE SUMMARY
                                                   
        Stack:             0      0         80     
     +--+------------------+------+---------+---------+
-       Grand Total:       524    668       80     
+       Grand Total:       538    668       80     
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -177,7 +177,7 @@ address   name
 00000057  BCSCTL1               
 00000058  BCSCTL2               
 00000053  BCSCTL3               
-0000c470  C$$EXIT               
+0000c47e  C$$EXIT               
 00000059  CACTL1                
 0000005a  CACTL2                
 000010fb  CALBC1_12MHZ          
@@ -268,7 +268,7 @@ address   name
 00000120  WDTCTL                
 00000400  __STACK_END           
 00000050  __STACK_SIZE          
-0000c460  __TI_ISR_TRAP         
+0000c46e  __TI_ISR_TRAP         
 0000ffe0  __TI_int00            
 0000ffe4  __TI_int02            
 0000ffe6  __TI_int03            
@@ -286,24 +286,22 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
-0000c41c  _c_int00_noinit_noargs
+0000c42a  _c_int00_noinit_noargs
 0000fffe  _reset_vector         
 000003b0  _stack                
-0000c488  _system_pre_init      
-0000c470  abort                 
-0000c100  anim                  
-0000c430  col_CLK_Pulse         
-0000c43e  col_LE_Latch          
-0000c468  col_OE_Enable         
-0000c476  enableDisplay         
+0000c496  _system_pre_init      
+0000c47e  abort                 
+0000c43e  col_CLK_Pulse         
+0000c44c  col_LE_Latch          
+0000c476  col_OE_Enable         
+0000c484  enableDisplay         
 0000c000  gamma8                
-0000c3f0  goToRow               
-0000c200  images4               
+0000c3fe  goToRow               
 0000c280  main                  
-0000c44c  row_CLK_Pulse         
-0000c456  row_LE_Latch          
-0000c47c  row_OE_Disable        
-0000c482  row_OE_Enable         
+0000c45a  row_CLK_Pulse         
+0000c464  row_LE_Latch          
+0000c48a  row_OE_Disable        
+0000c490  row_OE_Enable         
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -412,23 +410,21 @@ address   name
 000010fe  CALDCO_1MHZ           
 000010ff  CALBC1_1MHZ           
 0000c000  gamma8                
-0000c100  anim                  
-0000c200  images4               
 0000c280  main                  
-0000c3f0  goToRow               
-0000c41c  _c_int00_noinit_noargs
-0000c430  col_CLK_Pulse         
-0000c43e  col_LE_Latch          
-0000c44c  row_CLK_Pulse         
-0000c456  row_LE_Latch          
-0000c460  __TI_ISR_TRAP         
-0000c468  col_OE_Enable         
-0000c470  C$$EXIT               
-0000c470  abort                 
-0000c476  enableDisplay         
-0000c47c  row_OE_Disable        
-0000c482  row_OE_Enable         
-0000c488  _system_pre_init      
+0000c3fe  goToRow               
+0000c42a  _c_int00_noinit_noargs
+0000c43e  col_CLK_Pulse         
+0000c44c  col_LE_Latch          
+0000c45a  row_CLK_Pulse         
+0000c464  row_LE_Latch          
+0000c46e  __TI_ISR_TRAP         
+0000c476  col_OE_Enable         
+0000c47e  C$$EXIT               
+0000c47e  abort                 
+0000c484  enableDisplay         
+0000c48a  row_OE_Disable        
+0000c490  row_OE_Enable         
+0000c496  _system_pre_init      
 0000ffe0  __TI_int00            
 0000ffe4  __TI_int02            
 0000ffe6  __TI_int03            
@@ -448,4 +444,4 @@ ffffffff  __TI_prof_data_size
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
 
-[137 symbols]
+[135 symbols]

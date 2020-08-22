@@ -33,7 +33,7 @@ void goToRow(unsigned int);
 
 int main(void)
 {
-    int brightnessStep = 65;
+    static const int brightnessStep = 65;
     unsigned int col, row, frame, brightness;
     volatile unsigned long j, k = 0;
     WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
@@ -95,11 +95,10 @@ int main(void)
     } // superloop
 }
 
-#pragma vector=TIMERA0_VECTOR
+#pragma vector=TAIV
 __interrupt void Timer_A (void)
 {
     P1OUT ^= redLED;
-    P1IFG &= ~TA0IFG;
 }
 
 void enableDisplay()

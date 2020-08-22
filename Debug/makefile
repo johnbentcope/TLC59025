@@ -2,7 +2,9 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-CG_TOOL_ROOT := /home/john/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.1.LTS
+SHELL = cmd.exe
+
+CG_TOOL_ROOT := C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.2.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -15,8 +17,8 @@ $(GEN_CMDS__FLAG) \
 
 -include ../makefile.init
 
-RM := rm -rf
-RMDIR := rm -rf
+RM := DEL /F
+RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
@@ -138,14 +140,14 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 TLC59025.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"/home/john/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"TLC59025.map" --heap_size=80 --stack_size=80 -i"/home/john/ti/ccs1010/ccs/ccs_base/msp430/include" -i"/home/john/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.1.LTS/lib" -i"/home/john/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="TLC59025_linkInfo.xml" --use_hw_mpy=none --rom_model -o "TLC59025.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.2.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"TLC59025.map" --heap_size=80 --stack_size=80 -i"C:/ti/ccs1010/ccs/ccs_base/msp430/include" -i"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.2.LTS/lib" -i"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="TLC59025_linkInfo.xml" --use_hw_mpy=none --rom_model -o "TLC59025.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 TLC59025.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: MSP430 Hex Utility'
-	"/home/john/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.1.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "TLC59025.hex" $(EXE_OUTPUTS__QUOTED)
+	"C:/ti/ccs1010/ccs/tools/compiler/ti-cgt-msp430_20.2.2.LTS/bin/hex430" --memwidth=8 --romwidth=8 -o "TLC59025.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 

@@ -11,7 +11,7 @@
 #define IMAGES_H_
 
 
-const uint8_t images4[16][8] =
+static const uint8_t images4[16][8] =
 {
     { 255, 251, 247, 243, 239, 235, 231, 227},
     { 223, 219, 215, 211, 207, 203, 199, 195},
@@ -31,7 +31,7 @@ const uint8_t images4[16][8] =
     { 227, 231, 235, 239, 243, 247, 251, 255}
 };
 
-const uint8_t images2[8][8] =
+static const uint8_t images2[8][8] =
 {
  { 255,   0,   0,   0,   0,   0,   0,   0},
  {   0, 255,   0,   0,   0,   0,   0,   0},
@@ -43,7 +43,7 @@ const uint8_t images2[8][8] =
  {   0,   0,   0,   0,   0,   0,   0, 255}
 };
 
-const uint8_t images[8][8] =
+static const uint8_t images[8][8] =
 {
   {   0,  10,  20,  44,  44,  20,  10,   0},
   {  10,  44, 134, 161, 161, 134,  44,  10},
@@ -55,7 +55,7 @@ const uint8_t images[8][8] =
   {   0,  10,  20,  44,  44,  20,  10,   0}
 };
 
-const uint8_t anim[32][8] =
+static const uint8_t anim[32][8] =
 
 {
 // PASTE BELOW HERE
